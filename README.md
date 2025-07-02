@@ -6,7 +6,7 @@ A dynamical systems model (known as MINDy, developed by [Singh et al., 2020](htt
 
 **data**
 - song2023elife
-  - slidingBeh.m : Generate group-average engagement timecourse (applies HRF convolution and sliding window to relate with fMRI data)
-  - slidingBeh_surr.m : Generate phase-randomized behavioral timecourses for non-parametric permutation test
-  - slidingFC.m : Generate time-resolved functional connectivity matrices from BOLD timeseries, using sliding window analysis
+  - beh: processed behavioral time series of 27 participants. further data description can be found in /neuraldynamics/.
+  - fmri: processed fMRI data (200 parcel x time) of 27 participants. further data description can be found in /neuraldynamics/.
+  - input: input embedding time series, including visual, auditory, and semantic features of the stimuli. stimuli presentation was randomized for each individual in "gradCPTscene" run, but the same stimuli was used for other conditions.
 - gradientcoeff.mat: Cortical gradients found by [Margulies et al., 2016](https://neurovault.org/collections/1598/) summarized into 200-parcel [Schaefer](https://github.com/ThomasYeoLab/CBIG/tree/v0.14.3-Update_Yeo2011_Schaefer2018_labelname/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations/MNI) cortical atlas. 
