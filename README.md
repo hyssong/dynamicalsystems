@@ -2,7 +2,7 @@ A dynamical systems model (known as MINDy, developed by [Singh et al., 2020](htt
 
 **code**
 - modelfit_winput.py: imports fMRI and input time series to fit mindy model and estimate attractors using forward simulation of the model
-- code_parameter.py: compare saved model parameters with descriptive statistics: model W with functional connectivity and model B with stimulus-to-brain encoding coefficients
+- code_parameter.py: compare saved model parameters with descriptive statistics: parameter W with functional connectivity and parameter B with stimulus-to-brain encoding coefficients
 - code_attractors.py: aggregate attractors estimated from all runs and compare with cortical gradients
 - code_attention.py: calculate angle and magnitude of neural dynamics toward attractors and relate those with the dynamic attention measures 
 
