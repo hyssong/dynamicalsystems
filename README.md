@@ -11,7 +11,7 @@ A dynamical systems model (known as MINDy, developed by [Singh et al., 2020](htt
   - beh: processed behavioral time series of 27 participants. further data description can be found in [/neuraldynamics/](https://github.com/hyssong/neuraldynamics).
   - fmri: processed fMRI data (200 parcel x time) of 27 participants. further data description can be found in [/neuraldynamics/](https://github.com/hyssong/neuraldynamics).
   - input: input embedding time series, including visual, auditory, and semantic features of the stimuli. stimuli presentation was randomized for each individual in "gradCPTscene" run, but the same stimuli was used for other conditions.
-- gradientcoeff.mat: Cortical gradients found by [Margulies et al., 2016](https://neurovault.org/collections/1598/) summarized into 200-parcel [Schaefer](https://github.com/ThomasYeoLab/CBIG/tree/v0.14.3-Update_Yeo2011_Schaefer2018_labelname/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations/MNI) cortical atlas. 
+- gradientcoeff.mat: cortical gradients found by [Margulies et al., 2016](https://neurovault.org/collections/1598/) summarized into 200-parcel [Schaefer](https://github.com/ThomasYeoLab/CBIG/tree/v0.14.3-Update_Yeo2011_Schaefer2018_labelname/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations/MNI) atlas. 
 
 **model**
 - mindy.py: a simplified pytorch implementation of the MINDy model. this function can be used to fit any z-scored neural activity data of (neural unit x time). the model can be fit with or without inputs.
