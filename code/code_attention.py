@@ -14,11 +14,9 @@ def cosine_angle(a, b):
 def magnitude(a):
     return np.linalg.norm(a)
 
-directory = '/Users/hayoungsong/Documents/_postdoc/modelbrain/github'
+directory = '/set/directory' # ****** set directory *****
 sublist = np.sort([f for f in os.listdir(directory+'/data/song2023elife/fMRI') if f.startswith('sub-')])
 condlist = ['sitcomep1', 'sitcomep2', 'gradCPTface', 'gradCPTscene']
-
-# output_sublist = ['sub-002', 'sub-003', 'sub-004', 'sub-005', 'sub-006', 'sub-007', 'sub-008', 'sub-009', 'sub-010', 'sub-011', 'sub-012', 'sub-013', 'sub-014', 'sub-015', 'sub-016', 'sub-017', 'sub-018', 'sub-019', 'sub-021', 'sub-022', 'sub-023', 'sub-025', 'sub-026', 'sub-027', 'sub-028', 'sub-029', 'sub-030']
 
 angle_wd_fp_cat, mag_wd_cat, angle_b_fp_cat, mag_b_cat = np.zeros((len(sublist), len(condlist)))+np.nan, np.zeros((len(sublist), len(condlist)))+np.nan, np.zeros((len(sublist), len(condlist)))+np.nan, np.zeros((len(sublist), len(condlist)))+np.nan
 for ci, condition in enumerate(condlist):
@@ -40,9 +38,8 @@ for ci, condition in enumerate(condlist):
 
             if np.all(np.isnan(beh)): pass
             else:
-                # model_output = np.load(directory+'/output/'+condition+'_'+sub+'.npz')
-                model_output = np.load('/Users/hayoungsong/Documents/_postdoc/modelbrain/output_attractors/attnFest/input100/model_'+output_sublist[si]+'_'+condition+'.npz')
-
+                model_output = np.load(directory+'/output/'+condition+'_'+sub+'.npz')
+                
                 if np.any(np.isnan(fixed_points)): print(str(sub)+' '+str(task))
                 else:
                     term_WD = model_output['term_W'] + model_output['term_D']
