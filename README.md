@@ -1,0 +1,1 @@
+A dynamical systems model (known as MINDy, developed by [Singh et al., 2020](https://doi.org/10.1016/j.neuroimage.2020.117046) and [Chen et al., 2025](https://doi.org/10.1162/imag_a_00442)) that fits large-scale neural activity time series data to estimate model parameters. Model parameters are used to find attractors and fluctuations of the attractor landscape across time. 
