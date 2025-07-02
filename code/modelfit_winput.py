@@ -43,10 +43,12 @@ print('input: '+str(input.shape))
 # run model
 #######################################################
 model = mindy(nParcel, nInput)
+# if running the model without input: model = mindy(nParcel, 0)
 
 for iter in range(niter):
     t_ = np.random.permutation(nT - batch_size)[0]
     y, yhat, J = model.forward(ts[:, t_:t_ + batch_size], input[:, t_:t_ + batch_size])
+    # if running the model without input: y, yhat, J = model.forward(ts[:, t_:t_ + batch_size], [])
     model.update_weights(J)
 Xpred, pW, pD, pB = model.predict(ts, input)
 torch.save(model, directory+'/output/'+filename+'.pth')
