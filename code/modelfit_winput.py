@@ -4,8 +4,10 @@ import scipy
 import sys
 import os
 
-directory = '/Users/hayoungsong/Documents/_postdoc/modelbrain/github'
-filename = 'sub-001_sitcomep1'
+directory = '/set/directory' # ****** set directory *****
+subject   = 'sub-001'
+condition = 'sitcomep1'
+filename = condition + '_' + subject
 sys.path.append(directory+'/model')
 from mindy import mindy
 
@@ -25,9 +27,9 @@ if os.path.exists(directory+'/output')==False:
 #######################################################
 # load fMRI & input time series
 #######################################################
-ts = scipy.io.loadmat(directory+'/data/song2023elife/fmri/sub-001/sitcomep1.mat')['ts'].T
+ts = scipy.io.loadmat(directory+'/data/song2023elife/fmri/'+subject+'/'+condition+'.mat')['ts'].T
 ts = scipy.stats.zscore(ts, 1)
-input = np.load(directory+'/data/song2023elife/input/sitcomep1_input_pc.npy').T
+input = np.load(directory+'/data/song2023elife/input/'+condition+'_input_pc.npy').T
 # they should be normalized across time per parcel or per input feature
 
 nParcel = ts.shape[0]
