@@ -33,9 +33,9 @@ def estimate_attractors(fixed_points):
         attractors_id[t] = np.argmax(corrs)
     return attractors, attractors_id
 
-directory = '/Users/hayoungsong/Documents/_postdoc/modelbrain/github'
+
+directory = '/set/directory' # ****** set directory *****
 filelist = [f for f in os.listdir(directory+'/output') if f.endswith('.npz')]
-# filelist = [f for f in os.listdir('/Users/hayoungsong/Documents/_postdoc/modelbrain/output_attractors/HCP/input100') if f.endswith('.npz')]
 
 # aggregate attractors of all runs
 attractors_cat = []
@@ -44,7 +44,6 @@ nRun = 0
 for file in filelist:
     nRun=nRun+1
     fixed_points = np.load(directory+'/output/'+file)['fixed_points']
-    # fixed_points = np.load('/Users/hayoungsong/Documents/_postdoc/modelbrain/output_attractors/HCP/input100/'+file)['fixed_points']
     if np.any(np.isnan(fixed_points)):
         nattractors.append(0)
     else:
