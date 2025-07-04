@@ -40,7 +40,7 @@ for ci, condition in enumerate(condlist):
             else:
                 model_output = np.load(directory+'/output/'+condition+'_'+sub+'.npz')
                 
-                if np.any(np.isnan(fixed_points)): print(str(sub)+' '+str(task))
+                if np.any(np.isnan(model_output['fixed_points'])): print(str(sub)+' '+str(task))
                 else:
                     term_WD = model_output['term_W'] + model_output['term_D']
                     term_B = model_output['term_B']
