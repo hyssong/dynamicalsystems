@@ -31,6 +31,7 @@ ts = scipy.io.loadmat(directory+'/data/song2023elife/fmri/'+subject+'/'+conditio
 ts = scipy.stats.zscore(ts, 1)
 input = np.load(directory+'/data/song2023elife/input/'+condition+'_input_pc.npy').T
 # they should be normalized across time per parcel or per input feature
+# if running the model without input: input = []
 
 nParcel = ts.shape[0]
 nInput  = input.shape[0]
@@ -51,6 +52,7 @@ for iter in range(niter):
     # if running the model without input: y, yhat, J = model.forward(ts[:, t_:t_ + batch_size], [])
     model.update_weights(J)
 Xpred, pW, pD, pB = model.predict(ts, input)
+# if running the model without input: Xpred, pW, pD = model.predict(ts, [])
 torch.save(model, directory+'/output/'+filename+'.pth')
 
 # prediction of next time step
